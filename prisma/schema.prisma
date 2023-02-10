@@ -13,10 +13,10 @@ datasource db {
 model Task {
   id        Int      @id @default(autoincrement())
   title     String @db.Text
-  important Boolean  @default(false)
-  completed Boolean  @default(false)
+  important Boolean
+  completed Boolean @default(false)
   createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  updatedAt DateTime @updatedAt @default(now())
 
   @@map("tasks")
 }
