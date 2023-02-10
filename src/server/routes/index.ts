@@ -1,10 +1,8 @@
 import { Router } from "express";
-import { StatusCodes } from "http-status-codes";
+import { TasksController } from "../controllers";
 
 const router = Router();
 
-router.get("/", (req, res) => {
-  res.status(StatusCodes.OK).send("Initial server response");
-});
+router.post("/create", TasksController.createValidation, TasksController.create);
 
 export { router };
